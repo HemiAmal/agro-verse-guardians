@@ -5,7 +5,6 @@ import { InstructionPopup } from "@/components/game/InstructionPopup";
 import { ResultPopup } from "@/components/game/ResultPopup";
 import { NASADataPanel } from "@/components/game/NASADataPanel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
 interface Crop {
@@ -35,7 +34,6 @@ const Level1 = () => {
 
   useEffect(() => {
     if (!gameStarted) {
-      // Generate random weather data
       setTemperature(Math.round(10 + Math.random() * 30));
       setRainfall(Math.round(20 + Math.random() * 250));
     }
@@ -49,7 +47,6 @@ const Level1 = () => {
   const handleCropSelect = (crop: Crop) => {
     setSelectedCrop(crop);
     
-    // Check if crop is suitable
     const tempMatch = temperature >= crop.idealTemp.min && temperature <= crop.idealTemp.max;
     const rainMatch = rainfall >= crop.idealRainfall.min && rainfall <= crop.idealRainfall.max;
     
@@ -79,10 +76,8 @@ const Level1 = () => {
 
     setPoints(earnedPoints);
     
-    // Animate growth
     setTimeout(() => {
       setShowResult(true);
-      // Update game progress
       updateProgress(1, earnedPoints);
     }, 2000);
   };
@@ -136,7 +131,6 @@ const Level1 = () => {
 
       <main className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* NASA Data Panel */}
           <div className="lg:col-span-1">
             <NASADataPanel
               title="NASA POWER Data"

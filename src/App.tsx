@@ -15,8 +15,6 @@ import Level3 from "./pages/games/Level3";
 import Level4 from "./pages/games/Level4";
 import Level5 from "./pages/games/Level5";
 import NotFound from "./pages/NotFound";
-import GamePage from "./pages/game";
-import Game3D from "./pages/game";
 
 const queryClient = new QueryClient();
 
@@ -38,7 +36,6 @@ const App = () => (
           <Route path="/games/level3" element={<Level3 />} />
           <Route path="/games/level4" element={<Level4 />} />
           <Route path="/games/level5" element={<Level5 />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
