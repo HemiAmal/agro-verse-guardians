@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Sprout, Globe2, Database, Trophy } from "lucide-react";
+import { Sprout, Globe2, Database, Trophy, Gamepad2 } from "lucide-react";
 import heroImage from "@/assets/hero-farm.jpg";
 
 const Index = () => {
@@ -10,7 +10,7 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
         
@@ -46,8 +46,14 @@ const Index = () => {
                 Start Farming
               </Button>
             </Link>
-            <Link to="/about">
+            <Link to="/game-map">
               <Button variant="gaming" size="xl" className="w-full sm:w-auto">
+                <Gamepad2 className="mr-2" />
+                Game Zone
+              </Button>
+            </Link>
+            <Link to="/about">
+              <Button variant="secondary" size="xl" className="w-full sm:w-auto">
                 <Database className="mr-2" />
                 Explore NASA Data
               </Button>

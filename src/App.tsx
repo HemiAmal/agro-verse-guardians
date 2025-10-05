@@ -8,7 +8,15 @@ import Regions from "./pages/Regions";
 import Simulation from "./pages/Simulation";
 import Results from "./pages/Results";
 import About from "./pages/About";
+import GameMap from "./pages/GameMap";
+import Level1 from "./pages/games/Level1";
+import Level2 from "./pages/games/Level2";
+import Level3 from "./pages/games/Level3";
+import Level4 from "./pages/games/Level4";
+import Level5 from "./pages/games/Level5";
 import NotFound from "./pages/NotFound";
+import GamePage from "./pages/game";
+import Game3D from "./pages/game";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +32,12 @@ const App = () => (
           <Route path="/simulation/:regionId" element={<Simulation />} />
           <Route path="/results/:regionId" element={<Results />} />
           <Route path="/about" element={<About />} />
+          <Route path="/game-map" element={<GameMap />} />
+          <Route path="/games/level1" element={<Level1 />} />
+          <Route path="/games/level2" element={<Level2 />} />
+          <Route path="/games/level3" element={<Level3 />} />
+          <Route path="/games/level4" element={<Level4 />} />
+          <Route path="/games/level5" element={<Level5 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

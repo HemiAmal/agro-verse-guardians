@@ -5,6 +5,7 @@ import { ArrowLeft, Play, RotateCcw } from "lucide-react";
 import { DecisionPanel } from "@/components/simulation/DecisionPanel";
 import { MapView } from "@/components/simulation/MapView";
 import { DataPanel } from "@/components/simulation/DataPanel";
+import GameIntroPanel from "@/components/simulation/gameIntroPanel";
 
 const Simulation = () => {
   const { regionId } = useParams();
@@ -52,6 +53,9 @@ const Simulation = () => {
           {/* Right: Decision Panel */}
           <div className="lg:col-span-1">
             <DecisionPanel onRunSimulation={handleRunSimulation} isSimulating={isSimulating} />
+          </div>
+          <div className="lg:col-span-1">
+              <GameIntroPanel ></GameIntroPanel>
           </div>
         </div>
       </main>
